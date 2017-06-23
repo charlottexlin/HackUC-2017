@@ -1,0 +1,46 @@
+int x;
+int y;
+int boxrow;
+int boxcolumn;
+int[][] boxcolor;
+
+void setup (){
+  size(750,750);
+  background(250);
+  boxcolor = new int[25][25];
+}
+void draw (){
+  x=0;
+  while (x < width){
+    y=0;
+    while (y < height){
+      rect(x,y,30,30);
+        if(boxcolor[x/30][y/30] == 1){
+          fill(0);
+          rect(x,y,30,30);
+          fill(250);
+        }
+        if(boxcolor[x/30][y/30] == 2){
+          fill(80);
+          rect(x,y,30,30);
+          fill(250);
+          }
+        if(boxcolor[x/30][y/30] == 3){
+          fill(160);
+          rect(x,y,30,30);
+          fill(250);
+        if(boxcolor[x/30][y/30] == 4){
+          fill(250);
+          rect(x,y,30,30);
+          fill(250);
+        }
+      y = y + 30;
+    }
+    x = x + 30;
+  }
+}
+void mousePressed () {
+  boxrow = mouseX/30;
+  boxcolumn = mouseY/30;
+  boxcolor [boxrow] [boxcolumn] = 1;
+}
