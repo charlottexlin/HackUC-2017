@@ -1,0 +1,27 @@
+float x;
+float y;
+int boxrow;
+int boxcolumn;
+boolean[][] black;
+
+void setup (){
+  size(750,750);
+  background(250);
+}
+void draw (){
+  x=0;
+  while (x < width){
+    y=0;
+    while (y < height){
+      rect(x,y,30,30);
+      y = y + 30;
+    }
+    x = x + 30;
+  }
+}
+void mousePressed () {
+  boxrow = mouseY/30;
+  boxcolumn = mouseX/30;
+  if (mouseY < 30)
+  fill(0);
+}
